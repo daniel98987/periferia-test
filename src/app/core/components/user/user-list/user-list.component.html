@@ -1,0 +1,86 @@
+<div class="container-grids">
+  <div class="row">
+    <div class="col-12 mt-2 mb-4">
+      <mat-card class="periferia-mat-card-mdc-border">
+        <div class="card-title">Listado De Usuarios Periferia</div>
+        <div class="row justify-content-between" style="padding: 5px">
+          <div class="col-12 col-md-8 col-lg-6 -left mt-2">
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm"
+                  >Filtro por nombre y correo</span
+                >
+              </div>
+              <input
+                type="text"
+                [(ngModel)]="searchTerm"
+                (keyup)="filterDynamic(searchTerm)"
+                class="form-control"
+                aria-label="Small"
+                aria-describedby="inputGroup-sizing-sm"
+              />
+            </div>
+          </div>
+          <div class="col-6 col-md-3 col-lg-5">
+            <div class="row justify-content-end">
+              @if (usersFilter.length>0) {
+              <div class="col-4 col-md-2 mt-2">
+                <button mat-stroked-button color="warn" (click)="clean()">
+                  Limpiar
+                </button>
+              </div>
+              }
+
+              <div class="col-4 col-md-2 mt-2">
+                <button mat-stroked-button (click)="add()">Añadir</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          @for (user of usersFilter; track user.id) {
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <mat-card-content>
+              <mat-card
+                class="mt-2 mb-4 custom-image-card-figth styled-element"
+              >
+                <mat-card-header class="title_center">
+                  <mat-card-title class="mat-align-center"
+                    >User: #{{ user.id }}</mat-card-title
+                  >
+                </mat-card-header>
+                <mat-card-content>
+                  <div class="row">
+                    <div class="col-4 border-user-rigth">
+                      <img
+                        style="padding: 2px"
+                        class="img-fluid border-user-image"
+                        width="80px"
+                        height="80px"
+                        mat-card-image
+                        [src]="user.image"
+                      />
+                    </div>
+                    <div class="col-8">
+                      <div class="label text-card-values">
+                        Nombre: {{ user.name | titlecase }}
+                      </div>
+                      <div class="label text-card-values">
+                        Correo: {{ user.mail }}
+                      </div>
+                    </div>
+                  </div>
+                </mat-card-content>
+              </mat-card>
+            </mat-card-content>
+          </div>
+          } @empty {
+          <div>
+            <h4 class="margin-left">Lista vacía...</h4>
+          </div>
+          }
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

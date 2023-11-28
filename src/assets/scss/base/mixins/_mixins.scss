@@ -1,0 +1,70 @@
+@mixin mixin-text-properties( 
+  $font-family: none,
+  $text-transform:none,
+  $color: none, $font-size: none,
+  $font-weight: none,
+  $margin: none, $margin-top: none, $margin-right: none, $margin-bottom: none, $margin-left: none,
+  $padding: none, $padding-top: none, $padding-right: none, $padding-bottom: none, $padding-left: none
+) {
+  @if $font-family != none {
+    font-family: $font-family !important;
+  }
+
+  @if $color != none {
+    color: $color !important;
+  }
+
+  @if $text-transform != none {
+    text-transform: $text-transform !important;
+  }
+
+  @if $font-size != none {
+    font-size: $font-size !important;
+  }
+
+  @if $font-weight != none {
+    font-weight: $font-weight !important;
+  }
+
+  // Margin
+  @if $margin != none {
+    margin: $margin !important;
+  }
+
+  @if $margin-top != none {
+    margin-top: $margin-top !important;
+  }
+
+  @if $margin-right != none {
+    margin-right: $margin-right !important;
+  }
+
+  @if $margin-bottom != none {
+    margin-bottom: $margin-bottom !important;
+  }
+
+  @if $margin-left != none {
+    margin-left: $margin-left !important;
+  }
+
+  // Padding
+  @if $padding != none {
+    padding: $padding !important;
+  }
+
+  @if $padding-top != none {
+    padding-top: $padding-top !important;
+  }
+
+  @if $padding-right != none {
+    padding-right: $padding-right !important;
+  }
+
+  @if $padding-bottom != none {
+    padding-bottom: $padding-bottom !important;
+  }
+
+  @if $padding-left != none {
+    padding-left: $padding-left !important;
+  }
+}

@@ -1,0 +1,56 @@
+.card-title {
+    background-color: var(--periferia-color-mat-card-them) !important;
+    border-top-left-radius: 13px !important;
+    border-top-right-radius: 13px !important;
+
+    @include mixin-text-properties(
+        $font-family: var(--periferia-font-arial),
+        $color: var(--periferia-color-white),
+         $font-size: 15px,
+        $text-transform: capitalize,
+        $font-weight: 700,
+        $padding: 4px 20px)
+}
+
+.container-grids{
+    width: 95% !important;
+    margin: 0 auto !important; 
+  }
+  mat-dialog-container .mat-card {
+    margin: 0 !important;
+  }
+  
+  mat-card-content {
+    font-size: x-small;
+    margin-left: var(--margin);
+    margin-right: var(--margin);
+    background: white;
+  }
+  
+  
+  .card-content {
+    width: auto;
+    font-size: smaller;
+    padding: 8px 5px 2px 5px;
+    border: none;
+  }
+  
+  .periferia-mat-card-mdc-border {
+    border-top-left-radius: 13px !important;
+    border-top-right-radius: 13px !important;
+  }
+  .mat-mdc-card {
+  
+    box-shadow:0px 1px 4px -1px var(--periferia-color-gray-shadow) !important;
+
+  }
+  
+  .mat-mdc-dialog-container .mat-mdc-card {
+    margin: 0 !important;
+  }
+  
+  .mat-mdc-card-content {
+  
+    padding: 8px 11px !important
+  }
+  
